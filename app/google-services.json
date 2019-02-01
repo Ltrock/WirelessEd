@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "83909028436",
+    "firebase_url": "https://wireless-17535.firebaseio.com",
+    "project_id": "wireless-17535",
+    "storage_bucket": "wireless-17535.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83909028436:android:ec34f5e66de6630b",
+        "android_client_info": {
+          "package_name": "com.example.wireless"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83909028436-kmt9jrh3t3l0qctsovc7gkgporokj83q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wireless",
+            "certificate_hash": "623a90b42999e6a069ef3531b72ef42cc204aa68"
+          }
+        },
+        {
+          "client_id": "83909028436-b50kd7u2hrp24242lv41kdupf1kdo56b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrlMNdA377B4B3NVcALCGIyH1RMWNGXnY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83909028436-b50kd7u2hrp24242lv41kdupf1kdo56b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
