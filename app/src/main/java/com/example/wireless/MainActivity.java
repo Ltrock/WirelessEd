@@ -124,15 +124,10 @@ public class MainActivity extends AppCompatActivity {
 
                         try {
 
-                            //check if successful
-
                             if (task.isSuccessful()) {
 
-                                //User is successfully registered and logged in
 
-                                //start Profile Activity here
-
-                                Toast.makeText(MainActivity.this, "registration successful",
+                                Toast.makeText(MainActivity.this, "successful",
 
                                         Toast.LENGTH_SHORT).show();
 
@@ -142,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
                             }else{
 
-                                Toast.makeText(MainActivity.this, "Couldn't register, try again",
+                                Toast.makeText(MainActivity.this, "Try again",
 
                                         Toast.LENGTH_SHORT).show();
 
