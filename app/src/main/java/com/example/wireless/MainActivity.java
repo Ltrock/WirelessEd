@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 finish();
 
-                                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                                startActivity(new Intent(getApplicationContext(), mainpage.class));
 
                             }else{
 

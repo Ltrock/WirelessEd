@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             startActivity(new Intent(getApplicationContext(),
 
-                                    ProfileActivity.class));
+                                    mainpage.class));
 
                         }else {
 
