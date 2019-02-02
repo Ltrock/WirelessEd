@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
                             }else{
 
-                                Toast.makeText(MainActivity.this, "Try again",
+                                Toast.makeText(MainActivity.this, "Try again, access the internet yet?",
 
                                         Toast.LENGTH_SHORT).show();
 
