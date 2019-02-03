@@ -1,21 +1,16 @@
 [{
-        "title": "Chapter1: Intro",
-        "image": "https://news.siamphone.com/upload/news/nw23729_0.jpg"
-        
-    },
-{
-        "title": "Chapter2: Android",
-        "image": "https://www.modify.in.th/wp-content/uploads/Stick-with-Android.png"
+        "title": "Star Wars: The Last Jedi",
+        "image": "https://api.androidhive.info/json/movies/starwars.jpg",
        
     },
- {
-        "title": "Chapter1: Intro",
-        "image": "https://news.siamphone.com/upload/news/nw23729_0.jpg"
-        
+{
+        "title": "Shape Of Water",
+        "image": "https://api.androidhive.info/json/movies/shape_of_water.jpg",
+       
     },
- {
-        "title": "Chapter1: Intro",
-        "image": "https://news.siamphone.com/upload/news/nw23729_0.jpg"
-        
+    {
+        "title": "Baahubali: The Conclusion",
+        "image": "https://api.androidhive.info/json/movies/baahubali2.jpg",
+       
     }
     ]
