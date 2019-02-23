@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/imageViewFlower"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:onClick="handleChooseImage"
+        app:layout_constraintLeft_toLeftOf="@id/editTextAmount"
+        app:layout_constraintTop_toBottomOf="@id/editTextAmount"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorAccent"
+        />
+
+    <EditText
+        android:id="@+id/editTextFlowerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Flower name:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Amount:"
+        app:layout_constraintLeft_toLeftOf="@id/editTextFlowerName"
+        app:layout_constraintTop_toBottomOf="@id/editTextFlowerName"
+        android:layout_marginTop="30dp"
+        />
+
+
+
+    <Button
+        android:id="@+id/btnInsertData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert data"
+        android:onClick="handleInsertData"
+        app:layout_constraintLeft_toLeftOf="@id/imageViewFlower"
+        app:layout_constraintTop_toBottomOf="@id/imageViewFlower"
+        android:layout_marginTop="30dp"
+        />
+</android.support.constraint.ConstraintLayout>
