@@ -11,53 +11,38 @@ import android.view.MenuItem;
 
 public class Firstpage extends AppCompatActivity {
 
-    private ActionBar toolbar;
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firstpage);
 
-        toolbar = getSupportActionBar();
+        BottomNavigationView bottomNav = findViewById(R.id.navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        // load the store fragment by default
-        //toolbar.setTitle("Course");
-        loadFragment(new CourseFragment());
-    }
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment;
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    //toolbar.setTitle("Course");
-                    fragment = new CourseFragment();
-                    loadFragment(fragment);
-                    return true;
-                case R.id.navigation_note:
-                    //toolbar.setTitle("Note");
-                    fragment = new NoteFragment();
-                    loadFragment(fragment);
-
-                case R.id.navigation_profile:
-                    //toolbar.setTitle("Profile");
-                    fragment = new ProfileFragment();
-                    loadFragment(fragment);
-                    return true;
-            }
-
-            return false;
-        }
-    };
-
-    private void loadFragment(Fragment fragment) {
-        // load fragment
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
     }
 
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()) {
+                        case R.id.navigation_home:
+                            selectedFragment = new CourseFragment();
+                            break;
+                        case R.id.navigation_note:
+                            selectedFragment = new NoteFragment();
+                            break;
+                        case R.id.navigation_profile:
+                            selectedFragment = new ProfileFragment();
+                            break;
+                    }
+
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
+                            selectedFragment).commit();
+
+                    return true;
+                }
+            };
 }
-
