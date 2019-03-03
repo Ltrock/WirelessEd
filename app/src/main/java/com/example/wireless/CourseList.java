@@ -3,15 +3,16 @@ package com.example.wireless;
 public class CourseList {
     public String ChapName;
     public String Img;
-    public float ChapRating; // How difficult that chap is
+    public String Desc; // How difficult that chap is
 
 
     public CourseList(){
 
     }
-    public CourseList(String ChapName,String Img){
+    public CourseList(String ChapName,String Img, String Desc){
         this.ChapName = ChapName;
         this.Img = Img;
+        this.Desc = Desc;
     }
 
     public String getChapName() {
@@ -29,14 +30,15 @@ public class CourseList {
     public void setImg(String Img) {
         this.Img = Img;
     }
-    public float getChapRating() {
-        return ChapRating;
+
+    public String getDesc() {
+        return Desc;
     }
 
-    public void setChapRating(float ChapRating) {
-        this.ChapRating = ChapRating;
-    }
+    public void setDesc(String Desc){this.Desc = Desc;}
 
+
+    
 
 }
 

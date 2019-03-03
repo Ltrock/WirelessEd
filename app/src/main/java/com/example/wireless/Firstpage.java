@@ -1,48 +1,51 @@
 package com.example.wireless;
 
+
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
+
+
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
-public class Firstpage extends AppCompatActivity {
+import com.rd.PageIndicatorView;
 
+
+public class Firstpage extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firstpage);
 
-        BottomNavigationView bottomNav = findViewById(R.id.navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        PagerAdapter a = new PagerAdapter(getSupportFragmentManager());
+        ViewPager viewPager = (ViewPager)findViewById(R.id.viewPager);
+        viewPager.setAdapter(a);
 
-
+        PageIndicatorView pageIndicatorView = (PageIndicatorView)findViewById(R.id.pageIndicatorView);
+        pageIndicatorView.setViewPager(viewPager);
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
-                    switch (item.getItemId()) {
-                        case R.id.navigation_home:
-                            selectedFragment = new CourseFragment();
-                            break;
-                        case R.id.navigation_note:
-                            selectedFragment = new NoteFragment();
-                            break;
-                        case R.id.navigation_profile:
-                            selectedFragment = new ProfileFragment();
-                            break;
-                    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,
-                            selectedFragment).commit();
+        //noinspection SimplifiableIfStatement
+        if(id == R.id.action) {
+            return true;
+        }
 
-                    return true;
-                }
-            };
+        return super.onOptionsItemSelected(item);
+    }
 }
