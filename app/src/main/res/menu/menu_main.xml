@@ -4,9 +4,16 @@
     android:layout_width="match_parent"
 
     android:layout_height="match_parent">
+
+    <!--show option menu-->
     <item
-        android:id="@+id/action"
+        android:id="@+id/note"
         android:orderInCategory="100"
-        android:title="@string/action"
+        android:title="Note"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/profile"
+        android:orderInCategory="100"
+        android:title="Profile"
         app:showAsAction="never"/>
 </menu>
