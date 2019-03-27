@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:fitsSystemWindows="true"
+
+
+    >
+    <android.support.design.widget.AppBarLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:theme="@style/AppTheme">
+
+
+
+        <android.support.v7.widget.Toolbar
+
+            android:id="@+id/toolbar"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="?attr/actionBarSize"
+
+            android:background="?attr/colorPrimary"
+
+            app:popupTheme="@style/AppTheme"/>
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/module"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:background="#a390e4"
+        android:gravity="center"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:src="@drawable/module" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="Module"
+        android:textSize="20dp" />
+
+
+    <ImageView
+        android:id="@+id/exer"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:background="#c69dd2"
+        android:gravity="center"
+        android:layout_marginTop="310dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:src="@drawable/exer" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="280dp"
+        android:text="Exercise"
+        android:textSize="20dp" />
+
+
+    <ImageView
+        android:id="@+id/quiz"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:background="#c68866"
+        android:gravity="center"
+        android:layout_marginTop="490dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:src="@drawable/quiz" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="460dp"
+        android:text="Quiz"
+        android:textSize="20dp" />
+
+
+
+</RelativeLayout>

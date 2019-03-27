@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Wireless</string>
-    <string name="profile">Profile</string>
-    <string name="link"><a href="https://mycourses.ict.mahidol.ac.th/icthome/index.php">ICT Mycourses</a></string>
+    <string name="Note">Note</string>
+    <string name="Img">Images</string>
+    <string name="link1"><a href="https://mycourses.ict.mahidol.ac.th/icthome/index.php">ICT Mycourses</a></string>
+    <string name="link2"><a href="https://developer.android.com/docs">Android Dev docs</a></string>
+    <string name="link4"><a href="https://inst.eecs.berkeley.edu/~ee123/sp15/lab/lab6/Pre-Lab6-Intro-to-Digital-Communications.html">Review Digital Modulation by python lab</a></string>
+    <string name="link3"><a href="https://dspillustrations.com/pages/posts/misc/python-ofdm-example.html">Lowest Cost Wireless OFDM Learning over Soundcard</a></string>
+
 
 
 </resources>

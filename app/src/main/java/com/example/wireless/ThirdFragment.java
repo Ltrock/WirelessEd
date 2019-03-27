@@ -101,7 +101,8 @@ public class ThirdFragment extends Fragment implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getActivity(), Module.class);
+        Intent intent = new Intent(getActivity(),
+                SelectAct.class);
         startActivity(intent);
 
     }
