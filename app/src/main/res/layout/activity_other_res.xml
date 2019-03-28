@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-
     >
     <android.support.design.widget.AppBarLayout
 
@@ -17,8 +15,6 @@
         android:layout_height="wrap_content"
 
         android:theme="@style/AppTheme">
-
-
 
         <android.support.v7.widget.Toolbar
 
@@ -37,7 +33,6 @@
     </android.support.design.widget.AppBarLayout>
 
 
-
     <TextView
         android:id="@+id/link1"
         android:layout_width="wrap_content"
@@ -45,7 +40,8 @@
         android:layout_marginTop="100dp"
         android:text="@string/link1"
         android:textSize="20dp"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginLeft="20dp"/>
     <TextView
         android:id="@+id/link2"
         android:layout_width="wrap_content"
@@ -53,6 +49,7 @@
         android:layout_marginTop="140dp"
         android:text="@string/link2"
         android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
     <TextView
         android:id="@+id/link3"
@@ -61,6 +58,7 @@
         android:layout_marginTop="180dp"
         android:text="@string/link3"
         android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
     <TextView
         android:id="@+id/link4"
@@ -69,8 +67,35 @@
         android:layout_marginTop="220dp"
         android:text="@string/link4"
         android:textSize="20dp"
+        android:layout_marginLeft="20dp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
-
+    <TextView
+        android:id="@+id/link5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:text="@string/link5"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <TextView
+        android:id="@+id/link6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="@string/link6"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <TextView
+        android:id="@+id/link7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        android:text="@string/link7"
+        android:textSize="20dp"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
 </RelativeLayout>

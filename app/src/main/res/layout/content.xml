@@ -3,8 +3,9 @@
     android:layout_width="170dp"
     android:layout_height="300dp"
     android:layout_marginLeft="20dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="30dp"
     android:orientation="horizontal"
+    android:layout_marginRight="10dp"
     android:padding="5dp">
 
     <LinearLayout
@@ -15,7 +16,10 @@
         <ImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="220dp"
+            android:padding="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
             android:scaleType="centerCrop" />
 
         <TextView

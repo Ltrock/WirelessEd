@@ -16,7 +16,7 @@ public class exer extends AppCompatActivity {
         setContentView(R.layout.activity_exer);
         View v = getLayoutInflater().inflate(R.layout.activity_exer, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle(getString(R.string.app_name));
+        mToolbar.setTitle("Exercise");
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -39,6 +39,11 @@ public class exer extends AppCompatActivity {
 
         if (id == R.id.otherres) {
             Intent intent = new Intent(this,OtherRes.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.note) {
+            Intent intent = new Intent(this,NotePage.class);
             this.startActivity(intent);
             return true;
         }

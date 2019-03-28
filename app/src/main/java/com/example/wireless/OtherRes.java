@@ -57,6 +57,11 @@ public class OtherRes extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         }
+        if (id == R.id.note) {
+            Intent intent = new Intent(this,NotePage.class);
+            this.startActivity(intent);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
 

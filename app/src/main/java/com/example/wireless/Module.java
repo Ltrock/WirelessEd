@@ -113,10 +113,13 @@ public class Module extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-
-
         if (id == R.id.otherres) {
             Intent intent = new Intent(this,OtherRes.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.note) {
+            Intent intent = new Intent(this,NotePage.class);
             this.startActivity(intent);
             return true;
         }

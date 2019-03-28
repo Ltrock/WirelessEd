@@ -15,7 +15,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".OtherRes"></activity>
+        <activity android:name=".Image"></activity>
+        <activity android:name=".NotePage" />
+        <activity android:name=".Read" />
+        <activity android:name=".OtherRes" />
         <activity android:name=".exer" />
         <activity android:name=".SelectAct" />
         <activity android:name=".Module" />

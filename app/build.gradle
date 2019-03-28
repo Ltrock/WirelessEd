@@ -92,19 +92,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 //    implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.picasso:picasso:2.71828'
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //switch language library
+    implementation 'com.akexorcist:localizationactivity:1.2.2'
 
 
 }
