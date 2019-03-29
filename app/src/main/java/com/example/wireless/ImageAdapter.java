@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.rd.utils.DensityUtils.dpToPx;
 
-class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
+public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
     private Context aContext;
     private List<UploadNote> aUploads;
 
@@ -36,7 +36,6 @@ class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
         Picasso.get()
                 .load(Current.getImageUrl()).resize(dpToPx(80), dpToPx(80)).centerCrop()
                 .placeholder(R.mipmap.ic_launcher)
-                .fit()
                 .into(holder.imageView);
     }
 
@@ -51,7 +50,6 @@ class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
 
         public ImageViewHolder(View itemView) {
             super(itemView);
-
             textViewName = itemView.findViewById(R.id.text_view_name);
             imageView = itemView.findViewById(R.id.image_view_upload);
         }

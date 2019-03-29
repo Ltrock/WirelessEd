@@ -81,7 +81,7 @@ public class NotePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (aUploadTask != null && aUploadTask.isInProgress()) {
-                    Toast.makeText(NotePage.this, "Uploading ...s", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NotePage.this, "Uploading ...", Toast.LENGTH_SHORT).show();
                 } else {
                     uploadFile();
                 }

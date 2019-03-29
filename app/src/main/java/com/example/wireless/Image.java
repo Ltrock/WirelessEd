@@ -33,7 +33,7 @@ public class Image extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
-        View v = getLayoutInflater().inflate(R.layout.activity_module, null);
+        View v = getLayoutInflater().inflate(R.layout.activity_image, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
         mToolbar.setTitle("Image");
         setSupportActionBar(mToolbar);
@@ -52,7 +52,7 @@ public class Image extends AppCompatActivity {
 
         aUploads = new ArrayList<>();
 
-        aDatabaseRef = FirebaseDatabase.getInstance().getReference("uploadNote");
+        aDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
 
         aDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override

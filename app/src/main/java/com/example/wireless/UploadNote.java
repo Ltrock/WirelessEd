@@ -9,7 +9,7 @@ public class UploadNote {
 
     public UploadNote(String name, String imageUrl) {
         if (name.trim().equals("")) {
-            name = "No Name";
+            name = "...";
         }
 
         aName = name;
