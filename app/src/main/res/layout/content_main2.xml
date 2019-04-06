@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_todoselect2"
+    android:columnCount="2"
+    android:padding="16dp"
+    >
+
+    <TextView  android:text="Todolist"
+        android:textSize="20dp"
+        android:layout_columnSpan="2"
+        android:layout_marginTop="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView  android:text="Day (1 - 31)"
+        style="@style/TextStyle" />
+
+    <EditText android:id="@+id/edit_date"
+        style="@style/EditStyle" />
+
+    <TextView  android:text="Month (1 - 12)"
+        style="@style/TextStyle" />
+
+    <EditText android:id="@+id/edit_month"
+        style="@style/EditStyle" />
+
+    <TextView  android:text="Todo"
+        style="@style/TextStyle" />
+
+    <EditText android:id="@+id/edit_day_name"
+        style="@style/EditStyle"
+        android:inputType="text" />
+
+    <Button android:id="@+id/button_add"
+        android:text="Save"
+        style="@style/ButtonStyle" />
+
+    <Button android:id="@+id/button_clear"
+        android:text="Clear"
+        style="@style/ButtonStyle" />
+
+    <Button android:id="@+id/button_back"
+        android:text="Back"
+        style="@style/ButtonStyle" />
+
+</GridLayout>
+

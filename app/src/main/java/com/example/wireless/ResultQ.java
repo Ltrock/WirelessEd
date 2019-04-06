@@ -77,6 +77,11 @@ public class ResultQ extends AppCompatActivity {
                 this.startActivity(intent);
                 return true;
             }
+            if (id == R.id.todo) {
+                Intent intent = new Intent(this, Todoselect.class);
+                this.startActivity(intent);
+                return true;
+            }
 
             return super.onOptionsItemSelected(item);
 

@@ -11,5 +11,6 @@
     <string name="link7"><a href="https://math.stackexchange.com/questions/1510436/difference-between-the-error-function-and-normal-distribution-function">Error function and Gaussian</a></string>
     <string name="solutionQ">Solution Quiz</string>
     <string name="solutionE">Exercise Solution</string>
+    <string name="todo">Todolist</string>
 
 </resources>

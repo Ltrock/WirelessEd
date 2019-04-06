@@ -15,7 +15,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".SolE"></activity>
+        <activity android:name=".Todoselect2"></activity>
+        <activity android:name=".Todoselect" />
+        <activity android:name=".SolE" />
         <activity android:name=".SolQ" />
         <activity android:name=".ResultE" />
         <activity android:name=".ResultQ" />
