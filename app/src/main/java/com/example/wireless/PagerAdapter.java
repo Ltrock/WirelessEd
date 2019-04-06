@@ -3,6 +3,7 @@ package com.example.wireless;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+// using fragment to slide between first,second and third fragment.
 
 public class PagerAdapter extends FragmentPagerAdapter {
 
@@ -21,11 +22,10 @@ public class PagerAdapter extends FragmentPagerAdapter {
         }
         return null;
     }
-
+    //method to count fragments which are 3
     @Override
     public int getCount() {
         return 3;
     }
-
 
 }

@@ -11,17 +11,16 @@ import android.webkit.WebView;
 // read pdf file from the selected chapter on webview and see embedded file by google doc
 // the file is retrieved from firebase storage
 
-public class Read extends AppCompatActivity {
-    private WebView readpdfView;
-    private String file_path;
+public class SolE extends AppCompatActivity {
+    private WebView readsolqpdfView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_read);
-        View v = getLayoutInflater().inflate(R.layout.activity_module, null);
+        setContentView(R.layout.activity_sol_e);
+        View v = getLayoutInflater().inflate(R.layout.activity_sol_e, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Chapter");
+        mToolbar.setTitle("Exercise solution");
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -31,15 +30,11 @@ public class Read extends AppCompatActivity {
             }
         });
 
-        //use embedded API of GG doc, download on webview
-        Intent intent= getIntent();
-        file_path = intent.getStringExtra("filePath");
-        readpdfView = (WebView)findViewById(R.id.readpdfView);
-
-        readpdfView.setVisibility(WebView.VISIBLE);
-        WebSettings webSettings = readpdfView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        readpdfView.loadUrl("https://docs.google.com/gview?embedded=true&url="+file_path);
+        //use GG doc, download and display solution on webview
+        WebView webview = (WebView) findViewById(R.id.readsolpdfView);
+        webview.getSettings().setJavaScriptEnabled(true);
+        String pdf = "https://firebasestorage.googleapis.com/v0/b/wireless-17535.appspot.com/o/SolE.pdf?alt=media&token=a4c0a157-cbd4-4bdf-bcfb-873ae2cffc24";
+        webview.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);
     }
 }
 

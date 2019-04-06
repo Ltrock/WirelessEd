@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+// splashscreen to show activity when open the application, it will show logo and pause from 3 seconds
 public class SplashScreen extends AppCompatActivity {
 
     @Override

@@ -34,7 +34,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         UploadNote Current = aUploads.get(position);
         holder.textViewName.setText(Current.getName());
         Picasso.get()
-                .load(Current.getImageUrl()).resize(dpToPx(80), dpToPx(80)).centerCrop()
+                .load(Current.getImageUrl()).resize(dpToPx(300), dpToPx(300)).centerCrop()
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.imageView);
     }

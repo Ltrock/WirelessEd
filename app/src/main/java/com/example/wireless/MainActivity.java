@@ -21,7 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-
+// Allow students to select between login and register
 public class MainActivity extends AppCompatActivity {
 
 
@@ -49,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
         button_register = (Button)findViewById(R.id.button_register);
         button_login = (Button)findViewById(R.id.button_login);
         mAuth = FirebaseAuth.getInstance();
-
-
-
 
 
         button_register.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+    // students can register by typing email and password
     public void RegisterUser(){
 
         String Email = email.getText().toString().trim();

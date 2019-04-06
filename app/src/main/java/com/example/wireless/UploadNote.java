@@ -1,8 +1,12 @@
 package com.example.wireless;
 
+
+// constructor, getter setter method for Notepage
 public class UploadNote {
     private String aName;
     private String aImageUrl;
+
+    //constructor
 
     public UploadNote() {
     }

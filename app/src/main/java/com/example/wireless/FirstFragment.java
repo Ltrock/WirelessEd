@@ -10,12 +10,7 @@ import android.view.ViewGroup;
 
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link FirstFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link FirstFragment#newInstance} factory method to
- * create an instance of this fragment.
+fragment is implemented for viewpager swipe screen, this is the first fragment
  */
 public class FirstFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match

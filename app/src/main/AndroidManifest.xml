@@ -15,7 +15,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".Image"></activity>
+        <activity android:name=".SolE"></activity>
+        <activity android:name=".SolQ" />
+        <activity android:name=".ResultE" />
+        <activity android:name=".ResultQ" />
+        <activity android:name=".Quiz" />
+        <activity android:name=".Image" />
         <activity android:name=".NotePage" />
         <activity android:name=".Read" />
         <activity android:name=".OtherRes" />

@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.rd.PageIndicatorView;
 
+//show viewpager to slide between each fragment
 
 public class Firstpage extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class Firstpage extends AppCompatActivity{
         PageIndicatorView pageIndicatorView = (PageIndicatorView)findViewById(R.id.pageIndicatorView);
         pageIndicatorView.setViewPager(viewPager);
     }
-
+    //menu options
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.auth.FirebaseUser;
 
-
+// for students to login to the app
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
+    // when click on login button, it will let students to input email and password that already registered
     public void LoginUser(){
 
         String Email = email.getText().toString().trim();

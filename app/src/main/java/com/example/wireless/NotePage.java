@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import android.os.Handler;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -29,6 +31,9 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import static com.rd.utils.DensityUtils.dpToPx;
+
+// The class for uploading note with photo and short name of photo to share content
+// related to wireless content to everyone that has account to access the app
 
 public class NotePage extends AppCompatActivity {
 
@@ -96,12 +101,15 @@ public class NotePage extends AppCompatActivity {
         });
     }
 
+    // method to open recent images on device
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
+
+    //get image uri from firebase storage to save in imageview of layour
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -111,9 +119,12 @@ public class NotePage extends AppCompatActivity {
                 && data != null && data.getData() != null) {
             aImageUri = data.getData();
 
-            Picasso.get().load(aImageUri).resize(dpToPx(80), dpToPx(80)).centerCrop().into(aImageView);
+
+            Picasso.get().load(aImageUri).into(aImageView);
         }
     }
+
+    //get file extention to match with type specified in uri of picture keep in firebase storage
 
     private String getFileExtension(Uri uri) {
         ContentResolver cR = getContentResolver();
@@ -121,6 +132,7 @@ public class NotePage extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
+    // method to upload file and show progress bar while uploading
     private void uploadFile() {
         if (aImageUri != null) {
             StorageReference fileReference = aStorageRef.child(System.currentTimeMillis()
@@ -139,11 +151,22 @@ public class NotePage extends AppCompatActivity {
                             }, 500);
 
                             Toast.makeText(NotePage.this, "Upload successful", Toast.LENGTH_LONG).show();
-                            UploadNote upload = new UploadNote(aEditTextFileName.getText().toString().trim(),
-                                    taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
+                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
+
+                            while (!urlTask.isSuccessful());
+
+                            Uri downloadUrl = urlTask.getResult();
+
+//                            Log.d(TAG, "onSuccess: firebase download url: " + downloadUrl.toString());
+
+                            UploadNote upload = new UploadNote(aEditTextFileName.getText().toString().trim(),downloadUrl.toString());
+
+
 
                             String uploadId = aDatabaseRef.push().getKey();
+
                             aDatabaseRef.child(uploadId).setValue(upload);
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -164,10 +187,10 @@ public class NotePage extends AppCompatActivity {
         }
     }
 
+    // when click on show image, it will link to Image activity
     private void openImagesActivity() {
         Intent intent = new Intent(this, Image.class);
         startActivity(intent);
     }
-
 
     }

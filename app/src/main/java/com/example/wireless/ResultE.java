@@ -1,26 +1,27 @@
 package com.example.wireless;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-// show additional resources link related to wireless class in selected browser on device
-public class OtherRes extends AppCompatActivity {
+// show result of exercise
+public class ResultE extends AppCompatActivity {
+
+    TextView t1,t2,t3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other_res);
-        View v = getLayoutInflater().inflate(R.layout.activity_module, null);
+        setContentView(R.layout.activity_result_e);
+        View v = getLayoutInflater().inflate(R.layout.activity_result_e, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Resources");
+        mToolbar.setTitle("Exercise Evaluation");
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -30,28 +31,36 @@ public class OtherRes extends AppCompatActivity {
             }
         });
 
-        TextView t1 = (TextView) findViewById(R.id.link1);
-        t1.setMovementMethod(LinkMovementMethod.getInstance());
+        t1 = (TextView)findViewById(R.id.textv4);
+        t2 = (TextView)findViewById(R.id.textv5);
+        t3 = (TextView)findViewById(R.id.textv6);
 
-        TextView t2 = (TextView) findViewById(R.id.link2);
-        t2.setMovementMethod(LinkMovementMethod.getInstance());
+        Intent i =getIntent();
+        String questions = i.getStringExtra("Total:");
+        String correct = i.getStringExtra("Correct:");
+        String wrong = i.getStringExtra("Wrong:");
 
-        TextView t3 = (TextView) findViewById(R.id.link3);
-        t3.setMovementMethod(LinkMovementMethod.getInstance());
+        t1.setText(questions);
+        t2.setText(correct);
+        t3.setText(wrong);
 
-        TextView t4 = (TextView) findViewById(R.id.link4);
-        t4.setMovementMethod(LinkMovementMethod.getInstance());
+        Button se =findViewById(R.id.sole);
+        se.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),SolE.class);
+                startActivity(intent);
+
+            }
+        });
     }
-
-    // menu options
+    //menu options
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
 
     }
-
-    //select options between additional resources and note
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

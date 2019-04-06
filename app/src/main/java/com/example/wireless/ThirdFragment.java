@@ -11,14 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 
-
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ThirdFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ThirdFragment#newInstance} factory method to
- * create an instance of this fragment.
+ fragment is implemented for viewpager swipe screen, this is the first fragment
  */
 public class ThirdFragment extends Fragment implements OnClickListener {
     // TODO: Rename parameter arguments, choose names that match

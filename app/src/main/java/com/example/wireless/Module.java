@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-
+// In module, it shows chapters and pdf file of each chapter for students to read
 public class Module extends AppCompatActivity {
     private static final String TAG = "Wireless";
     private List<DataModel> response_data;
@@ -61,6 +61,8 @@ public class Module extends AppCompatActivity {
 
         bindingData();
     }
+
+    //
 
     private void bindingData() {
         databaseReference.addChildEventListener(new ChildEventListener() {
@@ -102,6 +104,7 @@ public class Module extends AppCompatActivity {
         }
         return  index;
     }
+    //menu options
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

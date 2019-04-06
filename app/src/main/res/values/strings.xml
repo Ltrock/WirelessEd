@@ -9,5 +9,7 @@
     <string name="link5"><a href="http://www.ipellejero.es/hf/antenas/monopolo/english.php?fbclid=IwAR1ZPh5ijn2iJYj7w_EbBfxA9B64Di57MlFM5lDsDktrHJzm7dSOUg5yCxc">Analysis of HF Monopoles </a></string>
     <string name="link6"><a href="https://www.allaboutcircuits.com/technical-articles/an-introduction-to-antenna-basics/?fbclid=IwAR1n-Xz01GMBrUBqHuw0DAw3aScpTkhGUbCHd6tursNjdNiQuHPzXZrOM-Y/">Basic Antenna</a></string>
     <string name="link7"><a href="https://math.stackexchange.com/questions/1510436/difference-between-the-error-function-and-normal-distribution-function">Error function and Gaussian</a></string>
+    <string name="solutionQ">Solution Quiz</string>
+    <string name="solutionE">Exercise Solution</string>
 
 </resources>

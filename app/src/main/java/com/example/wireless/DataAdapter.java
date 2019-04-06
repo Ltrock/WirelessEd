@@ -18,9 +18,11 @@ import java.util.List;
 import static android.support.constraint.Constraints.TAG;
 import static com.rd.utils.DensityUtils.dpToPx;
 
+
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder> {
     private List<DataModel> dataModelList;
     private Context context;
+
     public DataAdapter(List<DataModel> result) {
         this.dataModelList = result;
 //        this.context = context;
