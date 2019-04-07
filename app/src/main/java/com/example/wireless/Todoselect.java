@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import com.example.wireless.R;
 import com.example.wireless.SQLiteHelper;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Todoselect extends AppCompatActivity {
     private SQLiteHelper mSQLite;
@@ -27,6 +28,7 @@ public class Todoselect extends AppCompatActivity {
 
     private String[] mMonths = {
             "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class Todoselect extends AppCompatActivity {
                 finish();
             }
         });
+
+        mAuth = FirebaseAuth.getInstance();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -161,6 +165,12 @@ public class Todoselect extends AppCompatActivity {
         }
         if (id == R.id.todo) {
             Intent intent = new Intent(this, Todoselect.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.logout) {
+            mAuth.signOut();
+            Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
             return true;
         }

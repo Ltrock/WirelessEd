@@ -1,6 +1,7 @@
 package com.example.wireless;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -8,12 +9,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.ui.email.SignInActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 // students can select activity by choosing between module, exercise, and quiz
 
 public class SelectAct extends AppCompatActivity {
-
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
         View v = getLayoutInflater().inflate(R.layout.activity_select, null);
@@ -82,6 +90,12 @@ public class SelectAct extends AppCompatActivity {
         }
         if (id == R.id.todo) {
             Intent intent = new Intent(this, Todoselect.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.logout) {
+            mAuth.signOut();
+            Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
             return true;
         }

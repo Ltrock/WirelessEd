@@ -12,8 +12,6 @@ import android.webkit.WebView;
 // the file is retrieved from firebase storage
 
 public class SolQ extends AppCompatActivity {
-    private WebView readsolqpdfView;
-    private String file_path;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

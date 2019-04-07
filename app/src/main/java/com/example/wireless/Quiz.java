@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wireless.Model.Question;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +33,7 @@ public class Quiz extends AppCompatActivity {
     int corr = 0;
     int wrong = 0;
     DatabaseReference databaseReference;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class Quiz extends AppCompatActivity {
                 finish();
             }
         });
+        mAuth = FirebaseAuth.getInstance();
         bt1 = (Button) findViewById(R.id.button1);
         bt2 = (Button) findViewById(R.id.button2);
         bt3 = (Button) findViewById(R.id.button3);
@@ -307,6 +310,12 @@ public class Quiz extends AppCompatActivity {
                         }
                         if (id == R.id.todo) {
                             Intent intent = new Intent(this, Todoselect.class);
+                            this.startActivity(intent);
+                            return true;
+                        }
+                        if (id == R.id.logout) {
+                            mAuth.signOut();
+                            Intent intent = new Intent(this, MainActivity.class);
                             this.startActivity(intent);
                             return true;
                         }

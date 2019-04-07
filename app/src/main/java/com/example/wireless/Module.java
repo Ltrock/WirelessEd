@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,6 +34,8 @@ public class Module extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
 
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,7 @@ public class Module extends AppCompatActivity {
                 finish();
             }
         });
+        mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         // input path
         databaseReference = firebaseDatabase.getReference("chapter/data");
@@ -128,6 +132,12 @@ public class Module extends AppCompatActivity {
         }
         if (id == R.id.todo) {
             Intent intent = new Intent(this, Todoselect.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.logout) {
+            mAuth.signOut();
+            Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
             return true;
         }

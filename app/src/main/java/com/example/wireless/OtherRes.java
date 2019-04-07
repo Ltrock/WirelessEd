@@ -11,9 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 // show additional resources link related to wireless class in selected browser on device
 public class OtherRes extends AppCompatActivity {
-
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class OtherRes extends AppCompatActivity {
                 finish();
             }
         });
+        mAuth = FirebaseAuth.getInstance();
 
         TextView t1 = (TextView) findViewById(R.id.link1);
         t1.setMovementMethod(LinkMovementMethod.getInstance());
@@ -69,6 +72,12 @@ public class OtherRes extends AppCompatActivity {
         }
         if (id == R.id.todo) {
             Intent intent = new Intent(this, Todoselect.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.logout) {
+            mAuth.signOut();
+            Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
             return true;
         }

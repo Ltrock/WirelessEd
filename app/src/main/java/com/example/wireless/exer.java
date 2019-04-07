@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wireless.Model.QuestionEx;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +30,8 @@ public class exer extends AppCompatActivity {
     int corr = 0;
     int wrong = 0;
     DatabaseReference databaseReference;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class exer extends AppCompatActivity {
                 finish();
             }
         });
+        mAuth =FirebaseAuth.getInstance();
         b1 = (Button) findViewById(R.id.b1);
         b2 = (Button) findViewById(R.id.b2);
         b3 = (Button) findViewById(R.id.b3);
@@ -275,6 +279,12 @@ public class exer extends AppCompatActivity {
         }
         if (id == R.id.todo) {
             Intent intent = new Intent(this, Todoselect.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.logout) {
+            mAuth.signOut();
+            Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
             return true;
         }

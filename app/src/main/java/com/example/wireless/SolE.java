@@ -31,7 +31,7 @@ public class SolE extends AppCompatActivity {
         });
 
         //use GG doc, download and display solution on webview
-        WebView webview = (WebView) findViewById(R.id.readsolpdfView);
+        WebView webview = (WebView) findViewById(R.id.readsolEpdfView);
         webview.getSettings().setJavaScriptEnabled(true);
         String pdf = "https://firebasestorage.googleapis.com/v0/b/wireless-17535.appspot.com/o/SolE.pdf?alt=media&token=a4c0a157-cbd4-4bdf-bcfb-873ae2cffc24";
         webview.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);

@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -21,6 +23,7 @@ import android.os.Handler;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -49,6 +52,7 @@ public class NotePage extends AppCompatActivity {
     private StorageReference aStorageRef;
     private DatabaseReference aDatabaseRef;
     private StorageTask aUploadTask;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,7 @@ public class NotePage extends AppCompatActivity {
                 finish();
             }
         });
+        mAuth = FirebaseAuth.getInstance();
         aButtonChooseImage = findViewById(R.id.choose_image);
         aButtonUpload = findViewById(R.id.button_upload);
         aTextViewShowUploads = findViewById(R.id.show_uploads);
@@ -191,6 +196,42 @@ public class NotePage extends AppCompatActivity {
     private void openImagesActivity() {
         Intent intent = new Intent(this, Image.class);
         startActivity(intent);
+    }
+    //menu options
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.otherres) {
+            Intent intent = new Intent(this,OtherRes.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.note) {
+            Intent intent = new Intent(this,NotePage.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.todo) {
+            Intent intent = new Intent(this, Todoselect.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.logout) {
+            mAuth.signOut();
+            Intent intent = new Intent(this, MainActivity.class);
+            this.startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     }

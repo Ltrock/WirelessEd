@@ -90,7 +90,7 @@ dependencies {
 
 //    implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.picasso:picasso:2.71828'
-    //switch language library
+    //select language library
     implementation 'com.akexorcist:localizationactivity:1.2.2'
 
 

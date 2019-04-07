@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +30,7 @@ public class Image extends AppCompatActivity {
 
     private DatabaseReference aDatabaseRef;
     private List<UploadNote> aUploads;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,7 @@ public class Image extends AppCompatActivity {
                 finish();
             }
         });
+        mAuth = FirebaseAuth.getInstance();
         aRecyclerView = findViewById(R.id.recycler_viewer);
         aRecyclerView.setHasFixedSize(true);
         aRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -98,6 +101,12 @@ public class Image extends AppCompatActivity {
         }
         if (id == R.id.todo) {
             Intent intent = new Intent(this, Todoselect.class);
+            this.startActivity(intent);
+            return true;
+        }
+        if (id == R.id.logout) {
+            mAuth.signOut();
+            Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
             return true;
         }

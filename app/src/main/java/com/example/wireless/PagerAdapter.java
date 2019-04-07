@@ -12,6 +12,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
         super(f);
     }
 
+    // get item of first,second and third fragment
     @Override
     public Fragment getItem(int position) {
         switch(position) {
