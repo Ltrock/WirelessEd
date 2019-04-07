@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ไวเลส</string>
+    <string name="Email">อีเมลล์</string>
+    <string name="Password">รหัสผ่าน</string>
+    <string name="Regis">ลงทะเบียน</string>
+    <string name="LOGIN">เข้าระบบ</string>
+    <string name="Note">จดบันทึก</string>
+    <string name="Img">Images</string>
+    <string name="link1"><a href="https://mycourses.ict.mahidol.ac.th/icthome/index.php">ICT Mycourses</a></string>
+    <string name="link2"><a href="https://developer.android.com/docs">Android Dev docs</a></string>
+    <string name="link4"><a href="https://inst.eecs.berkeley.edu/~ee123/sp15/lab/lab6/Pre-Lab6-Intro-to-Digital-Communications.html">Review Digital Modulation</a></string>
+    <string name="link3"><a href="https://dspillustrations.com/pages/posts/misc/python-ofdm-example.html">Lowest Cost Wireless OFDM Learning</a></string>
+    <string name="link5"><a href="http://www.ipellejero.es/hf/antenas/monopolo/english.php?fbclid=IwAR1ZPh5ijn2iJYj7w_EbBfxA9B64Di57MlFM5lDsDktrHJzm7dSOUg5yCxc">Analysis of HF Monopoles </a></string>
+    <string name="link6"><a href="https://www.allaboutcircuits.com/technical-articles/an-introduction-to-antenna-basics/?fbclid=IwAR1n-Xz01GMBrUBqHuw0DAw3aScpTkhGUbCHd6tursNjdNiQuHPzXZrOM-Y/">Basic Antenna</a></string>
+    <string name="link7"><a href="https://math.stackexchange.com/questions/1510436/difference-between-the-error-function-and-normal-distribution-function">Error function and Gaussian</a></string>
+    <string name="solutionQ">เฉลย Quiz</string>
+    <string name="solutionE">เฉลยแบบฝึกหัด</string>
+    <string name="todo">Todolist</string>
 
 </resources>

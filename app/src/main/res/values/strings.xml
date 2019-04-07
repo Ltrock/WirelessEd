@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Wireless</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="Regis">Register</string>
+    <string name="LOGIN">Login</string>
     <string name="Note">Note</string>
     <string name="Img">Images</string>
     <string name="link1"><a href="https://mycourses.ict.mahidol.ac.th/icthome/index.php">ICT Mycourses</a></string>
@@ -12,5 +16,6 @@
     <string name="solutionQ">Solution Quiz</string>
     <string name="solutionE">Exercise Solution</string>
     <string name="todo">Todolist</string>
+
 
 </resources>

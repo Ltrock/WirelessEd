@@ -27,17 +27,15 @@
             app:popupTheme="@style/AppTheme"/>
 
     </android.support.design.widget.AppBarLayout>
+
     <ImageButton
 
         android:id="@+id/btn_EN"
-
         android:layout_width="50dp"
-
         android:layout_height="50dp"
-        android:layout_marginLeft="270dp"
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="70dp"
         android:scaleType="fitCenter"
-
         android:src="@drawable/eng" />
 
 
@@ -45,9 +43,8 @@
     <ImageButton
 
         android:id="@+id/btn_TH"
-
         android:layout_width="50dp"
-        android:layout_marginLeft="340dp"
+        android:layout_marginLeft="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="70dp"
         android:scaleType="fitCenter"
@@ -97,7 +94,7 @@
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:background="@drawable/emaillayout"
         android:drawablePadding="10dp"
-        android:hint="Email"
+        android:hint="@string/Email"
         android:padding="15dp"
         android:textColor="#ffffff"
         android:textColorHighlight="#ffffff"
@@ -110,7 +107,7 @@
         android:layout_marginTop="340dp"
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:drawablePadding="10dp"
-        android:hint="Password"
+        android:hint="@string/Password"
         android:inputType="textPassword"
         android:background="@drawable/emaillayout"
         android:padding="15dp"
@@ -133,7 +130,7 @@
         android:id="@+id/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/Regis"
         android:padding="15dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -153,7 +150,7 @@
         android:background="@drawable/emaillayout"
         android:padding="15dp"
         android:textColor="#ffffff"
-        android:text="LOGIN"
+        android:text="@string/LOGIN"
         />
 
 

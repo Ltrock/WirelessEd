@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ui.email.SignInActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,10 +18,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 // students can select activity by choosing between module, exercise, and quiz
 
-public class SelectAct extends AppCompatActivity {
+public class SelectAct extends LocalizationActivity {
     private FirebaseAuth mAuth;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);

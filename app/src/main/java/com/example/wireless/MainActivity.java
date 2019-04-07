@@ -19,10 +19,10 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 
 import com.google.firebase.auth.FirebaseAuth;
-
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
 // Allow students to select between login and register
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends LocalizationActivity implements View.OnClickListener{
 
 
 
@@ -38,18 +38,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
 
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("Register");
+        mToolbar.setTitle(getString(R.string.Regis));
         email = (EditText) findViewById(R.id.signup_email_input);
         password =(EditText) findViewById(R.id.signup_password_input);
         button_register = (Button)findViewById(R.id.button_register);
         button_login = (Button)findViewById(R.id.button_login);
         mAuth = FirebaseAuth.getInstance();
 
+        findViewById(R.id.btn_TH).setOnClickListener(this);
+        findViewById(R.id.btn_EN).setOnClickListener(this);
 
         button_register.setOnClickListener(new View.OnClickListener() {
 
@@ -148,6 +150,16 @@ public class MainActivity extends AppCompatActivity {
 
                 });
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.btn_EN) {
+            setLanguage("en");
+        } else if (id == R.id.btn_TH) {
+            setLanguage("th");
+        }
     }
 
 }

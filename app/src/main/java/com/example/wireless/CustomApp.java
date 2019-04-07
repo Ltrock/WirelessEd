@@ -1,12 +1,15 @@
 package com.example.wireless;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.app.Application;
+
 
 import com.akexorcist.localizationactivity.core.LocalizationApplicationDelegate;
 
 
-public class CustomApp {
+public class CustomApp extends Application {
     LocalizationApplicationDelegate localizationDelegate = new LocalizationApplicationDelegate(this);
 
     @Override
