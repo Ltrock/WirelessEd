@@ -8,19 +8,21 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
+
 // read pdf file from the selected chapter on webview and see embedded file by google doc
 // the file is retrieved from firebase storage
 
-public class SolE extends AppCompatActivity {
+public class SolE extends LocalizationActivity {
     private WebView readsolqpdfView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+   public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sol_e);
         View v = getLayoutInflater().inflate(R.layout.activity_sol_e, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Exercise solution");
+        mToolbar.setTitle(getString(R.string.solutionE));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {

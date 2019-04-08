@@ -35,10 +35,12 @@ import com.squareup.picasso.Picasso;
 
 import static com.rd.utils.DensityUtils.dpToPx;
 
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
+
 // The class for uploading note with photo and short name of photo to share content
 // related to wireless content to everyone that has account to access the app
 
-public class NotePage extends AppCompatActivity {
+public class NotePage extends LocalizationActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
@@ -55,12 +57,12 @@ public class NotePage extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_page);
         View v = getLayoutInflater().inflate(R.layout.activity_module, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Create Note");
+        mToolbar.setTitle(getString(R.string.createnote));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -91,7 +93,7 @@ public class NotePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (aUploadTask != null && aUploadTask.isInProgress()) {
-                    Toast.makeText(NotePage.this, "Uploading ...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NotePage.this, getString(R.string.uploading), Toast.LENGTH_SHORT).show();
                 } else {
                     uploadFile();
                 }
@@ -155,7 +157,7 @@ public class NotePage extends AppCompatActivity {
                                 }
                             }, 500);
 
-                            Toast.makeText(NotePage.this, "Upload successful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(NotePage.this,getString(R.string.upsuccess), Toast.LENGTH_LONG).show();
                             Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
 
                             while (!urlTask.isSuccessful());
@@ -188,7 +190,7 @@ public class NotePage extends AppCompatActivity {
                         }
                     });
         } else {
-            Toast.makeText(this, "No file selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getString(R.string.nofile), Toast.LENGTH_SHORT).show();
         }
     }
 

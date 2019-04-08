@@ -11,26 +11,27 @@
     android:padding="16dp"
     >
 
-    <TextView  android:text="Todolist"
+    <TextView
+        android:text="@string/todo"
         android:textSize="20dp"
         android:layout_columnSpan="2"
         android:layout_marginTop="120dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"/>
 
-    <TextView  android:text="Day (1 - 31)"
+    <TextView  android:text="@string/day"
         style="@style/TextStyle" />
 
     <EditText android:id="@+id/edit_date"
         style="@style/EditStyle" />
 
-    <TextView  android:text="Month (1 - 12)"
+    <TextView  android:text="@string/month"
         style="@style/TextStyle" />
 
     <EditText android:id="@+id/edit_month"
         style="@style/EditStyle" />
 
-    <TextView  android:text="Todo"
+    <TextView  android:text="@string/todo"
         style="@style/TextStyle" />
 
     <EditText android:id="@+id/edit_day_name"
@@ -38,15 +39,15 @@
         android:inputType="text" />
 
     <Button android:id="@+id/button_add"
-        android:text="Save"
+        android:text="@string/save"
         style="@style/ButtonStyle" />
 
     <Button android:id="@+id/button_clear"
-        android:text="Clear"
+        android:text="@string/clear"
         style="@style/ButtonStyle" />
 
     <Button android:id="@+id/button_back"
-        android:text="Back"
+        android:text="@string/back"
         style="@style/ButtonStyle" />
 
 </GridLayout>

@@ -16,6 +16,8 @@ import com.firebase.ui.auth.ui.email.SignInActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+
+
 // students can select activity by choosing between module, exercise, and quiz
 
 public class SelectAct extends LocalizationActivity {

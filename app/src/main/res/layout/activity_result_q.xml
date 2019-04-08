@@ -17,7 +17,7 @@
         android:layout_marginTop="90dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="Total Questions:"/>
+        android:text="@string/TotalQ"/>
     <TextView
         android:id="@+id/tv2"
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
         android:layout_marginTop="120dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="Correct:"/>
+        android:text="@string/correct"/>
     <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         android:layout_marginStart="10dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="Wrong:"/>
+        android:text="@string/wrong"/>
     <TextView
         android:id="@+id/tv4"
         android:layout_width="wrap_content"
@@ -66,10 +66,11 @@
     <Button
         android:id="@+id/solq"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:layout_marginTop="500dp"
-        android:layout_marginLeft="140dp"
+        android:layout_marginLeft="130dp"
+        android:background="#7ddf64"
         android:paddingBottom="20dp"
         android:text="@string/solutionQ" />
 

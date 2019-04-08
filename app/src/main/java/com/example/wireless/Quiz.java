@@ -22,10 +22,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
 
 // Quiz class that show score and solution while doing quiz, it also set time limit
-public class Quiz extends AppCompatActivity {
+public class Quiz extends LocalizationActivity {
 
     Button bt1, bt2, bt3, bt4;
     TextView t_q, timer;
@@ -36,12 +37,12 @@ public class Quiz extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         View v = getLayoutInflater().inflate(R.layout.activity_quiz, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Quiz");
+        mToolbar.setTitle(getString(R.string.Quiz));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -89,7 +90,7 @@ public class Quiz extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (bt1.getText().toString().equals(question.getAnswer())) {
-                                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 bt1.setBackgroundColor(Color.GREEN);
                                 corr += 1;
 
@@ -102,7 +103,7 @@ public class Quiz extends AppCompatActivity {
                                     }
                                 }, 1500);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 bt1.setBackgroundColor(Color.RED);
                                 if (bt2.getText().toString().equals(question.getAnswer())) {
@@ -130,7 +131,7 @@ public class Quiz extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (bt2.getText().toString().equals(question.getAnswer())) {
-                                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 bt2.setBackgroundColor(Color.GREEN);
                                 corr += 1;
 
@@ -143,7 +144,7 @@ public class Quiz extends AppCompatActivity {
                                     }
                                 }, 1500);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 bt2.setBackgroundColor(Color.RED);
                                 if (bt1.getText().toString().equals(question.getAnswer())) {
@@ -174,7 +175,7 @@ public class Quiz extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (bt3.getText().toString().equals(question.getAnswer())) {
-                                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 bt3.setBackgroundColor(Color.GREEN);
                                 corr += 1;
 
@@ -187,7 +188,7 @@ public class Quiz extends AppCompatActivity {
                                     }
                                 }, 1500);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 bt3.setBackgroundColor(Color.RED);
                                 if (bt1.getText().toString().equals(question.getAnswer())) {
@@ -216,7 +217,7 @@ public class Quiz extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (bt4.getText().toString().equals(question.getAnswer())) {
-                                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 bt4.setBackgroundColor(Color.GREEN);
                                 corr += 1;
 
@@ -229,7 +230,7 @@ public class Quiz extends AppCompatActivity {
                                     }
                                 }, 1500);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 bt4.setBackgroundColor(Color.RED);
                                 if (bt1.getText().toString().equals(question.getAnswer())) {

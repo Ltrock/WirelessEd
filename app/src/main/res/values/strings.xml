@@ -4,7 +4,33 @@
     <string name="Password">Password</string>
     <string name="Regis">Register</string>
     <string name="LOGIN">Login</string>
+    <string name="LOGOUT">Logout</string>
+    <string name="todo">Todolist</string>
+    <string name="Resources">Resources</string>
     <string name="Note">Note</string>
+    <string name="Module">Module</string>
+    <string name="Exercise">Exercise</string>
+    <string name="Quiz">Quiz</string>
+    <string name="WirelessEd">WirelessEd</string>
+    <string name="Learningapp">Learning App</string>
+    <string name="Enhanceknowledge">Enhance Knowledge</string>
+    <string name="gotit">Got It</string>
+    <string name="Chap">Chapter</string>
+    <string name="correct">Correct</string>
+    <string name="wrong">Wrong</string>
+    <string name="TotalQ">Total Questions:</string>
+    <string name="todo2">Add Todo</string>
+    <string name="day">Day (1 - 31)</string>
+    <string name="month">Month (1 - 12)</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear text</string>
+    <string name="back">See lists</string>
+    <string name="saved">Saved</string>
+    <string name="compleD">date should be 1-31</string>
+    <string name="compleM">Month should be 1 - 12</string>
+    <string name="limitM1">That month only has 30 days</string>
+    <string name="limitM2">That month only has 28-29 days</string>
+    <string name="notodo">Not specify todo yet</string>
     <string name="Img">Images</string>
     <string name="link1"><a href="https://mycourses.ict.mahidol.ac.th/icthome/index.php">ICT Mycourses</a></string>
     <string name="link2"><a href="https://developer.android.com/docs">Android Dev docs</a></string>
@@ -13,9 +39,19 @@
     <string name="link5"><a href="http://www.ipellejero.es/hf/antenas/monopolo/english.php?fbclid=IwAR1ZPh5ijn2iJYj7w_EbBfxA9B64Di57MlFM5lDsDktrHJzm7dSOUg5yCxc">Analysis of HF Monopoles </a></string>
     <string name="link6"><a href="https://www.allaboutcircuits.com/technical-articles/an-introduction-to-antenna-basics/?fbclid=IwAR1n-Xz01GMBrUBqHuw0DAw3aScpTkhGUbCHd6tursNjdNiQuHPzXZrOM-Y/">Basic Antenna</a></string>
     <string name="link7"><a href="https://math.stackexchange.com/questions/1510436/difference-between-the-error-function-and-normal-distribution-function">Error function and Gaussian</a></string>
-    <string name="solutionQ">Solution Quiz</string>
+    <string name="solutionQ">Quiz Solution</string>
     <string name="solutionE">Exercise Solution</string>
-    <string name="todo">Todolist</string>
+    <string name="confirmdel">Conform delete?</string>
+    <string name="confirmdel1">Do you want to delete this?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="createnote">Create Note</string>
+    <string name="uploading">Uploading ...</string>
+    <string name="upsuccess">Upload successful</string>
+    <string name="nofile">No file selected</string>
+    <string name="Choosefile">Choose file</string>
+    <string name="uploadImg">Upload Image</string>
+    <string name="Showimage">Show Image</string>
 
 
 </resources>

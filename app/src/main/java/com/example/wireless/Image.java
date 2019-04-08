@@ -21,8 +21,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
-public class Image extends AppCompatActivity {
+public class Image extends LocalizationActivity {
     private RecyclerView aRecyclerView;
     private ImageAdapter aAdapter;
 
@@ -32,12 +33,12 @@ public class Image extends AppCompatActivity {
     private List<UploadNote> aUploads;
     private FirebaseAuth mAuth;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
         View v = getLayoutInflater().inflate(R.layout.activity_image, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Image");
+        mToolbar.setTitle(getString(R.string.Img));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {

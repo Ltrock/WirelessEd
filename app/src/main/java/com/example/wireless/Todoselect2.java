@@ -16,9 +16,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
-
-public class Todoselect2 extends AppCompatActivity {
+// Add todolist to save,clear, or go back to see all lists
+public class Todoselect2 extends LocalizationActivity {
     private SQLiteHelper mSQLite;
     private SQLiteDatabase mDb;
 
@@ -29,12 +30,12 @@ public class Todoselect2 extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todoselect2);
         View v = getLayoutInflater().inflate(R.layout.activity_todoselect2, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("TodoSelect2");
+        mToolbar.setTitle(getString(R.string.todo2));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -76,7 +77,7 @@ public class Todoselect2 extends AppCompatActivity {
                 startActivity(new Intent(Todoselect2.this, Todoselect.class));
             }
         });
-
+    // if click clear, clear all text input
         Button buttonClear = (Button)findViewById(R.id.button_clear);
         buttonClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +141,7 @@ public class Todoselect2 extends AppCompatActivity {
         String[] args = {date+"", month+"", dayName};
         mDb = mSQLite.getWritableDatabase();
         mDb.execSQL(sql, args);
-        showMessage("saved");
+        showMessage(getString(R.string.saved));
     }
 
     private void update(int date, int month, String dayName) {
@@ -153,36 +154,36 @@ public class Todoselect2 extends AppCompatActivity {
 
         mDb = mSQLite.getWritableDatabase();
         mDb.execSQL(sql, args);
-        showMessage("saved");
+        showMessage(getString(R.string.saved));
     }
 
     private boolean isDataComplete(int date, int month, String dayName) {
         if(date < 1 || date > 31) {
-            showMessage("date should be 1-31");
+            showMessage(getString(R.string.compleD));
             return false;
         }
 
         if(month < 1 || month > 12) {
-            showMessage("Month should be 1 - 12");
+            showMessage(getString(R.string.compleM));
             return false;
         }
 
         switch(month) {
             case 4: case 6: case 9: case 11:
                 if(date == 31) {
-                    showMessage("That month only has 30 days");
+                    showMessage(getString(R.string.limitM1));
                     return false;
                 }
                 break;
             case 2:
                 if(date > 29) {
-                    showMessage("That month only has 28-29 days");
+                    showMessage(getString(R.string.limitM2));
                     return false;
                 }
         }
 
         if(dayName.equals("")) {
-            showMessage("Not specify todo yet");
+            showMessage(getString(R.string.notodo));
             return false;
         }
 

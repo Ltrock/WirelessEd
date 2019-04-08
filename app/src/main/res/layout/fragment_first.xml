@@ -44,7 +44,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="false"
             android:paddingTop="80dp"
-            android:text="WirelessEd"
+            android:text="@string/WirelessEd"
             android:textColor="#ffffff"
             android:textSize="40dp" />
 

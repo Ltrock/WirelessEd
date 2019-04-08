@@ -12,14 +12,16 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
+
 // show result of exercise
-public class ResultE extends AppCompatActivity {
+public class ResultE extends LocalizationActivity{
 
     TextView t1,t2,t3;
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_e);
         View v = getLayoutInflater().inflate(R.layout.activity_result_e, null);

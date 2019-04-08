@@ -13,19 +13,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // In module, it shows chapters and pdf file of each chapter for students to read
-public class Module extends AppCompatActivity {
+public class Module extends LocalizationActivity {
     private static final String TAG = "Wireless";
     private List<DataModel> response_data;
     private DataAdapter dataAdapter;
@@ -38,12 +39,12 @@ public class Module extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_module);
         View v = getLayoutInflater().inflate(R.layout.activity_module, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Module");
+        mToolbar.setTitle(getString(R.string.Module));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {

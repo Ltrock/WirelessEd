@@ -21,8 +21,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
-public class exer extends AppCompatActivity {
+
+public class exer extends LocalizationActivity {
 
     Button b1, b2, b3, b4;
     TextView tq;
@@ -34,12 +36,12 @@ public class exer extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exer);
         View v = getLayoutInflater().inflate(R.layout.activity_exer, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Exercise");
+        mToolbar.setTitle(getString(R.string.Exercise));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -84,7 +86,7 @@ public class exer extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (b1.getText().toString().equals(question.getAns())) {
-                                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 b1.setBackgroundColor(Color.GREEN);
                                 corr += 1;
 
@@ -97,7 +99,7 @@ public class exer extends AppCompatActivity {
                                     }
                                 }, 1500);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 b1.setBackgroundColor(Color.RED);
                                 if (b2.getText().toString().equals(question.getAns())) {
@@ -125,7 +127,7 @@ public class exer extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (b2.getText().toString().equals(question.getAns())) {
-                                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 b2.setBackgroundColor(Color.GREEN);
                                 corr += 1;
 
@@ -138,7 +140,7 @@ public class exer extends AppCompatActivity {
                                     }
                                 }, 1500);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 b2.setBackgroundColor(Color.RED);
                                 if (b1.getText().toString().equals(question.getAns())) {
@@ -169,7 +171,7 @@ public class exer extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (b3.getText().toString().equals(question.getAns())) {
-                                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 b3.setBackgroundColor(Color.GREEN);
                                 corr += 1;
 
@@ -182,7 +184,7 @@ public class exer extends AppCompatActivity {
                                     }
                                 }, 1500);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 b3.setBackgroundColor(Color.RED);
                                 if (b1.getText().toString().equals(question.getAns())) {
@@ -211,7 +213,7 @@ public class exer extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (b4.getText().toString().equals(question.getAns())) {
-                                Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 b4.setBackgroundColor(Color.GREEN);
                                 corr += 1;
 
@@ -224,7 +226,7 @@ public class exer extends AppCompatActivity {
                                     }
                                 }, 1500);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 b4.setBackgroundColor(Color.RED);
                                 if (b1.getText().toString().equals(question.getAns())) {

@@ -8,6 +8,8 @@ import android.app.Application;
 
 import com.akexorcist.localizationactivity.core.LocalizationApplicationDelegate;
 
+// Class for method of localizationactivity derived from
+// http://www.akexorcist.com/2015/07/localization-activity-best-way-to-handle-language.html
 
 public class CustomApp extends Application {
     LocalizationApplicationDelegate localizationDelegate = new LocalizationApplicationDelegate(this);

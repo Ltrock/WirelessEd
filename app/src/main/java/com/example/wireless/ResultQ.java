@@ -11,14 +11,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
+
 //show result of quiz
 
-public class ResultQ extends AppCompatActivity {
+public class ResultQ extends LocalizationActivity {
 
     TextView t1,t2,t3;
     private FirebaseAuth mAuth;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_q);
         View v = getLayoutInflater().inflate(R.layout.activity_result_q, null);

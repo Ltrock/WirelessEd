@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="100dp"
-        android:text="Module"
+        android:text="@string/Module"
         android:textSize="20dp" />
 
 
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="280dp"
-        android:text="Exercise"
+        android:text="@string/Exercise"
         android:textSize="20dp" />
 
 
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="460dp"
-        android:text="Quiz"
+        android:text="@string/Quiz"
         android:textSize="20dp" />
 
 

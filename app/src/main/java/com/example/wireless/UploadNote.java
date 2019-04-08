@@ -11,6 +11,7 @@ public class UploadNote {
     public UploadNote() {
     }
 
+    // If null name, just put ..., else put name and imageUrl
     public UploadNote(String name, String imageUrl) {
         if (name.trim().equals("")) {
             name = "...";

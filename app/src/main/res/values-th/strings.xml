@@ -5,17 +5,54 @@
     <string name="Password">รหัสผ่าน</string>
     <string name="Regis">ลงทะเบียน</string>
     <string name="LOGIN">เข้าระบบ</string>
+    <string name="LOGOUT">ออกจากระบบ</string>
+    <string name="todo">รายการที่ทำ</string>
     <string name="Note">จดบันทึก</string>
-    <string name="Img">Images</string>
-    <string name="link1"><a href="https://mycourses.ict.mahidol.ac.th/icthome/index.php">ICT Mycourses</a></string>
-    <string name="link2"><a href="https://developer.android.com/docs">Android Dev docs</a></string>
-    <string name="link4"><a href="https://inst.eecs.berkeley.edu/~ee123/sp15/lab/lab6/Pre-Lab6-Intro-to-Digital-Communications.html">Review Digital Modulation</a></string>
-    <string name="link3"><a href="https://dspillustrations.com/pages/posts/misc/python-ofdm-example.html">Lowest Cost Wireless OFDM Learning</a></string>
-    <string name="link5"><a href="http://www.ipellejero.es/hf/antenas/monopolo/english.php?fbclid=IwAR1ZPh5ijn2iJYj7w_EbBfxA9B64Di57MlFM5lDsDktrHJzm7dSOUg5yCxc">Analysis of HF Monopoles </a></string>
-    <string name="link6"><a href="https://www.allaboutcircuits.com/technical-articles/an-introduction-to-antenna-basics/?fbclid=IwAR1n-Xz01GMBrUBqHuw0DAw3aScpTkhGUbCHd6tursNjdNiQuHPzXZrOM-Y/">Basic Antenna</a></string>
-    <string name="link7"><a href="https://math.stackexchange.com/questions/1510436/difference-between-the-error-function-and-normal-distribution-function">Error function and Gaussian</a></string>
-    <string name="solutionQ">เฉลย Quiz</string>
+    <string name="Resources">เนื้อหาเพิ่มเติม</string>
+    <string name="Module">บทเรียน</string>
+    <string name="Exercise">แบบฝึกหัด</string>
+    <string name="Quiz">แบบทดสอบ</string>
+    <string name="WirelessEd">ไวเลสเอ็ด</string>
+    <string name="Learningapp">แอพเพื่อการเรียนรู้</string>
+    <string name="Enhanceknowledge">เพิ่มพูนความรู้</string>
+    <string name="gotit">รับทราบ</string>
+    <string name="Chap">บทเรียน</string>
+    <string name="correct">ถูกต้อง</string>
+    <string name="wrong">ผิด</string>
+    <string name="TotalQ">คำถามทั้งหมด</string>
+    <string name="todo2">เพิ่มสิ่งที่ทำ</string>
+    <string name="day">วันที่ (1 - 31)</string>
+    <string name="month">เดือน (1 - 12)</string>
+    <string name="save">บันทึก</string>
+    <string name="clear">ลบข้อมูล</string>
+    <string name="back">ดูการจดบันทึก</string>
+    <string name="saved">บันทึกแล้ว</string>
+    <string name="compleD">วันที่คสรเป็น 1-31</string>
+    <string name="compleM">เดือนควนเป็น 1 - 12</string>
+    <string name="limitM1">เดือนนั้นมี 30 วัน</string>
+    <string name="limitM2">ดือนนั้นมี 28-29 วัน</string>
+    <string name="notodo">ยังไม่กรอกสิ่งที่ต้องทำ</string>
+    <string name="Img">รูปที่อัพโหลด</string>
+    <string name="link1"><a href="https://mycourses.ict.mahidol.ac.th/icthome/index.php">ICT มายคอสเซส</a></string>
+    <string name="link2"><a href="https://developer.android.com/docs">เอกสารการพัฒนาแอนดรอยด์</a></string>
+    <string name="link4"><a href="https://inst.eecs.berkeley.edu/~ee123/sp15/lab/lab6/Pre-Lab6-Intro-to-Digital-Communications.html">เอกสารทบทวนการโมดูเลชั่นแบบดิจิตัล</a></string>
+    <string name="link3"><a href="https://dspillustrations.com/pages/posts/misc/python-ofdm-example.html">เอกสารOFDไร้สายด้วยต้นทุนต่ำสุด</a></string>
+    <string name="link5"><a href="http://www.ipellejero.es/hf/antenas/monopolo/english.php?fbclid=IwAR1ZPh5ijn2iJYj7w_EbBfxA9B64Di57MlFM5lDsDktrHJzm7dSOUg5yCxc">คลื่นความถี่สูงของMonopoles</a></string>
+    <string name="link6"><a href="https://www.allaboutcircuits.com/technical-articles/an-introduction-to-antenna-basics/?fbclid=IwAR1n-Xz01GMBrUBqHuw0DAw3aScpTkhGUbCHd6tursNjdNiQuHPzXZrOM-Y/">เสาอากาศแอนเทนนาพื้นฐาน</a></string>
+    <string name="link7"><a href="https://math.stackexchange.com/questions/1510436/difference-between-the-error-function-and-normal-distribution-function">ฟังก์ชั่นข้อผิดพลาดและGaussian</a></string>
+    <string name="solutionQ">เฉลยแบบทดสอบ</string>
     <string name="solutionE">เฉลยแบบฝึกหัด</string>
-    <string name="todo">Todolist</string>
+    <string name="confirmdel">ลบ?</string>
+    <string name="confirmdel1">คุณต้องการลบ?</string>
+    <string name="ok">ตกลง</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="createnote">สร้างโพสท์</string>
+    <string name="uploading">กำลังอัพโหลด ...</string>
+    <string name="upsuccess">อัพโหลดสำเร็จ</string>
+    <string name="nofile">ไม่ได้เลือกไฟล์</string>
+    <string name="Choosefile">เลือกไฟล์</string>
+    <string name="uploadImg">อัพโฟลดรูป</string>
+    <string name="Showimage">โชว์รูป</string>
+
 
 </resources>

@@ -12,17 +12,18 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
 // show additional resources link related to wireless class in selected browser on device
-public class OtherRes extends AppCompatActivity {
+public class OtherRes extends LocalizationActivity {
     private FirebaseAuth mAuth;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_res);
         View v = getLayoutInflater().inflate(R.layout.activity_module, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Resources");
+        mToolbar.setTitle(getString(R.string.Resources));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {

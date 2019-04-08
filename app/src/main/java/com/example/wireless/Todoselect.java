@@ -21,8 +21,9 @@ import android.widget.TextView;
 import com.example.wireless.R;
 import com.example.wireless.SQLiteHelper;
 import com.google.firebase.auth.FirebaseAuth;
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
-public class Todoselect extends AppCompatActivity {
+public class Todoselect extends LocalizationActivity {
     private SQLiteHelper mSQLite;
     private SQLiteDatabase mDb;
 
@@ -31,7 +32,7 @@ public class Todoselect extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todoselect);
         View v = getLayoutInflater().inflate(R.layout.activity_todoselect, null);
@@ -123,9 +124,9 @@ public class Todoselect extends AppCompatActivity {
     private void onClickDelete(final int _id) {
         new AlertDialog.Builder(Todoselect.this)
                 .setIcon(R.mipmap.ic_launcher)
-                .setTitle("Confirm delete")
-                .setMessage("Do you want to delete this?")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setTitle(getString(R.string.confirmdel))
+                .setMessage(getString(R.string.confirmdel1))
+                .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String sql = "DELETE FROM important_day WHERE _id = " + _id;
@@ -134,7 +135,7 @@ public class Todoselect extends AppCompatActivity {
                         onStart();
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) { }
                 })

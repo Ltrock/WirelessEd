@@ -44,7 +44,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="false"
             android:paddingTop="80dp"
-            android:text="Enhance knowledge"
+            android:text="@string/Enhanceknowledge"
             android:textColor="#ffffff"
             android:textSize="40dp" />
         <Button
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:text="Got it"
+            android:text="@string/gotit"
             android:textColor="#0000FF"/>
 
     </RelativeLayout>

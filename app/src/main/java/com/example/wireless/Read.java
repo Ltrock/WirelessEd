@@ -8,20 +8,22 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
+
 // read pdf file from the selected chapter on webview and see embedded file by google doc
 // the file is retrieved from firebase storage
 
-public class Read extends AppCompatActivity {
+public class Read extends LocalizationActivity {
     private WebView readpdfView;
     private String file_path;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
         View v = getLayoutInflater().inflate(R.layout.activity_module, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Chapter");
+        mToolbar.setTitle(getString(R.string.Chap));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {

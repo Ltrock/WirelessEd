@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 
 import com.google.android.gms.tasks.Task;
@@ -19,10 +20,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.auth.FirebaseUser;
-
+import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 // for students to login to the app
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends LocalizationActivity {
 
     private EditText email;
 
@@ -37,14 +38,14 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
 
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle("Login");
+        mToolbar.setTitle(getString(R.string.LOGIN));
 
         email = (EditText)findViewById(R.id.login_email_input);
 

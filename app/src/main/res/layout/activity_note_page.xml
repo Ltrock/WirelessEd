@@ -34,7 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Choose file" />
+        android:background="#7ddf64"
+        android:text="@string/Choosefile" />
 
     <EditText
         android:id="@+id/file_name"
@@ -68,7 +69,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Upload image" />
+        android:background="#7ddf64"
+        android:text="@string/uploadImg" />
 
     <TextView
         android:id="@+id/show_uploads"
@@ -79,7 +81,7 @@
         android:layout_marginStart="25dp"
         android:layout_toEndOf="@+id/button_upload"
         android:gravity="center"
-        android:text="Show image"
+        android:text="@string/Showimage"
         android:textSize="16sp" />
 
 </RelativeLayout>
