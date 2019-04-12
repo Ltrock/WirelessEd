@@ -18,6 +18,7 @@ import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 public class OtherRes extends LocalizationActivity {
     private FirebaseAuth mAuth;
     @Override
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_res);

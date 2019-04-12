@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
-//show result of quiz
+//show result of quiz including solution button
 
 public class ResultQ extends LocalizationActivity {
 
@@ -25,7 +25,7 @@ public class ResultQ extends LocalizationActivity {
         setContentView(R.layout.activity_result_q);
         View v = getLayoutInflater().inflate(R.layout.activity_result_q, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Quiz Evaluation");
+        mToolbar.setTitle(getString(R.string.solutionQ));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -57,9 +57,8 @@ public class ResultQ extends LocalizationActivity {
 
             }
         });
-
     }
-
+        //menu options
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
             getMenuInflater().inflate(R.menu.menu_main, menu);

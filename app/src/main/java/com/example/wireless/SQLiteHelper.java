@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteHelper extends SQLiteOpenHelper {
 
         private static SQLiteHelper sqLiteDB;
-        private static final String DB_NAME = "dbases";
+        private static final String DB_NAME = "dbase1";
         private static final int DB_VERSION = 1;
 
         // using constructor via context, database name, and version
@@ -21,7 +21,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             }
             return sqLiteDB;
         }
-        // Create table
+        // Create table and attributes
         @Override
         public void onCreate(SQLiteDatabase db) {
             String sql =

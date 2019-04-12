@@ -88,7 +88,7 @@ public class NotePage extends LocalizationActivity {
                 openFileChooser();
             }
         });
-
+        //upload
         aButtonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +131,7 @@ public class NotePage extends LocalizationActivity {
         }
     }
 
-    //get file extention to match with type specified in uri of picture keep in firebase storage
+    //get file extension to match with type specified in uri of picture keep in firebase storage
 
     private String getFileExtension(Uri uri) {
         ContentResolver cR = getContentResolver();
@@ -157,21 +157,12 @@ public class NotePage extends LocalizationActivity {
                                 }
                             }, 500);
 
-                            Toast.makeText(NotePage.this,getString(R.string.upsuccess), Toast.LENGTH_LONG).show();
-                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
-
+                            Toast.makeText(NotePage.this,getString(R.string.upsuccess), Toast.LENGTH_LONG).show();Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
                             while (!urlTask.isSuccessful());
-
                             Uri downloadUrl = urlTask.getResult();
-
 //                            Log.d(TAG, "onSuccess: firebase download url: " + downloadUrl.toString());
-
                             UploadNote upload = new UploadNote(aEditTextFileName.getText().toString().trim(),downloadUrl.toString());
-
-
-
                             String uploadId = aDatabaseRef.push().getKey();
-
                             aDatabaseRef.child(uploadId).setValue(upload);
 
                         }
@@ -193,14 +184,12 @@ public class NotePage extends LocalizationActivity {
             Toast.makeText(this,getString(R.string.nofile), Toast.LENGTH_SHORT).show();
         }
     }
-
     // when click on show image, it will link to Image activity
     private void openImagesActivity() {
         Intent intent = new Intent(this, Image.class);
         startActivity(intent);
     }
     //menu options
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -235,5 +224,4 @@ public class NotePage extends LocalizationActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
     }

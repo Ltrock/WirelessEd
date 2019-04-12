@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.view.View.OnClickListener;
 
 /**
- fragment is implemented for viewpager swipe screen, this is the first fragment
+ fragment is implemented for viewpager swipe screen, this is the third fragment
  */
 public class ThirdFragment extends Fragment implements OnClickListener {
     // TODO: Rename parameter arguments, choose names that match

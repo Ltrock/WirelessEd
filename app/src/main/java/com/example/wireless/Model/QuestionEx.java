@@ -1,6 +1,6 @@
 package com.example.wireless.Model;
 
-//objects are constructed for the use of exercise
+//objects are constructed for the use of exercise including question, options and answer
 public class QuestionEx {
     public String q, op1, op2, op3, op4, ans;
 

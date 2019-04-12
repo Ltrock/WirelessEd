@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
-// show result of exercise
+// show result of exercise including solution button
 public class ResultE extends LocalizationActivity{
 
     TextView t1,t2,t3;
@@ -26,7 +26,7 @@ public class ResultE extends LocalizationActivity{
         setContentView(R.layout.activity_result_e);
         View v = getLayoutInflater().inflate(R.layout.activity_result_e, null);
         Toolbar mToolbar = findViewById(R.id.toolbar);
-        mToolbar.setTitle("Exercise Evaluation");
+        mToolbar.setTitle(getString(R.string.solutionE));
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {

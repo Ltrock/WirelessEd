@@ -23,6 +23,7 @@ import com.example.wireless.SQLiteHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
+
 public class Todoselect extends LocalizationActivity {
     private SQLiteHelper mSQLite;
     private SQLiteDatabase mDb;
@@ -70,6 +71,7 @@ public class Todoselect extends LocalizationActivity {
         root.removeAllViewsInLayout();
 
         mDb = mSQLite.getReadableDatabase();
+        // select to show data
         String sql = "SELECT * FROM important_day ORDER BY month, date";
         final Cursor cursor = mDb.rawQuery(sql, null);
 
@@ -114,16 +116,17 @@ public class Todoselect extends LocalizationActivity {
         }
         cursor.close();
     }
-
+    // update data and include _id of that row for Todoselect2 activity to use to update that row
     private void onClickUpdate(String _id) {
         Intent intent = new Intent(Todoselect.this, Todoselect2.class);
         intent.putExtra("_id", _id);
         startActivity(intent);
     }
+    //show dialog for user to confirm before delete that list
 
     private void onClickDelete(final int _id) {
         new AlertDialog.Builder(Todoselect.this)
-                .setIcon(R.mipmap.ic_launcher)
+                .setIcon(R.drawable.logo)
                 .setTitle(getString(R.string.confirmdel))
                 .setMessage(getString(R.string.confirmdel1))
                 .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {

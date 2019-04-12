@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 
 // Add todolist to save,clear, or go back to see all lists
+//sqlite example adapted from https://devahoy.com/posts/android-sqlite-tutorial-part-1/
 public class Todoselect2 extends LocalizationActivity {
     private SQLiteHelper mSQLite;
     private SQLiteDatabase mDb;
@@ -91,7 +92,8 @@ public class Todoselect2 extends LocalizationActivity {
 
 
     }
-
+    //check _id that was sent with intent or not if yes, keep in field and take _id to use to read
+    //data from table to add into view
     @Override
     public void onStart() {
         super.onStart();
@@ -116,7 +118,7 @@ public class Todoselect2 extends LocalizationActivity {
 
         cursor.close();
     }
-
+    // check data, if it = -1, it is new added data, then insert
     private void addImportantDay() {
         int date = Integer.valueOf(mEditDate.getText().toString());
         int month = Integer.valueOf(mEditMonth.getText().toString());
@@ -128,7 +130,9 @@ public class Todoselect2 extends LocalizationActivity {
 
         if(_id == -1) {
             insert(date, month, dayName);
-        } else {
+        }
+        // when click saved and have _id in field, it is an update
+        else {
             update(date, month, dayName);
         }
     }
@@ -156,7 +160,7 @@ public class Todoselect2 extends LocalizationActivity {
         mDb.execSQL(sql, args);
         showMessage(getString(R.string.saved));
     }
-
+    // check data complete or not
     private boolean isDataComplete(int date, int month, String dayName) {
         if(date < 1 || date > 31) {
             showMessage(getString(R.string.compleD));
@@ -193,7 +197,7 @@ public class Todoselect2 extends LocalizationActivity {
     private void showMessage(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
-
+    // go back to previous activity
     @Override
     public void onBackPressed() {
         finish();

@@ -19,6 +19,7 @@ import static android.support.constraint.Constraints.TAG;
 import static com.rd.utils.DensityUtils.dpToPx;
 
 
+
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder> {
     private List<DataModel> dataModelList;
     private Context context;
@@ -28,12 +29,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
 //        this.context = context;
 
     }
-
+    // create a new RecyclerView.ViewHolder and initializes some private fields to be used by RecyclerView.
     @Override
     public DataAdapter.DataViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new DataViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.content,viewGroup,false));
     }
 
+    // update the RecyclerView.ViewHolder contents with the item at the given position
+    // and sets up some private fields to be used by RecyclerView.
     @Override
     public void onBindViewHolder(final DataViewHolder dataViewHolder, final int i) {
         final DataModel dataModel = dataModelList.get(i);
@@ -54,7 +57,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
             }
         });
     }
-
+    //It returns The number of items currently available in adapter
     @Override
     public int getItemCount() {
         return dataModelList.size();

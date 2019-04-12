@@ -14,6 +14,9 @@ import java.util.List;
 
 import static com.rd.utils.DensityUtils.dpToPx;
 
+// Make image fits into xml file
+// using picasso library derived from https://github.com/square/picasso
+
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
     private Context aContext;
     private List<UploadNote> aUploads;
@@ -28,7 +31,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         View v = LayoutInflater.from(aContext).inflate(R.layout.image_item, parent, false);
         return new ImageViewHolder(v);
     }
-
+    //Called by RecyclerView to display the data at the specified position
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position) {
         UploadNote Current = aUploads.get(position);
@@ -38,7 +41,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.imageView);
     }
-
+    //count items
     @Override
     public int getItemCount() {
         return aUploads.size();

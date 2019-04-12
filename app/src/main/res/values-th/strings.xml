@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ไวเลส</string>
-    <string name="Email">อีเมลล์</string>
+    <string name="Email">อีเมล</string>
     <string name="Password">รหัสผ่าน</string>
     <string name="Regis">ลงทะเบียน</string>
     <string name="LOGIN">เข้าระบบ</string>

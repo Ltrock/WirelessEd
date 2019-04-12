@@ -26,13 +26,12 @@ import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 public class Image extends LocalizationActivity {
     private RecyclerView aRecyclerView;
     private ImageAdapter aAdapter;
-
     private ProgressBar aProgressCircle;
-
     private DatabaseReference aDatabaseRef;
     private List<UploadNote> aUploads;
     private FirebaseAuth mAuth;
     @Override
+    // retrieve data from Firebase database
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
@@ -51,14 +50,12 @@ public class Image extends LocalizationActivity {
         aRecyclerView = findViewById(R.id.recycler_viewer);
         aRecyclerView.setHasFixedSize(true);
         aRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         aProgressCircle = findViewById(R.id.progress_circle);
-
         aUploads = new ArrayList<>();
-
         aDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
-
         aDatabaseRef.addValueEventListener(new ValueEventListener() {
+            // This method is called once with the initial value and again
+            // whenever data at this location is updated
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
@@ -71,7 +68,7 @@ public class Image extends LocalizationActivity {
                 aRecyclerView.setAdapter(aAdapter);
                 aProgressCircle.setVisibility(View.INVISIBLE);
             }
-
+            //show message when it has error
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(Image.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
@@ -79,6 +76,7 @@ public class Image extends LocalizationActivity {
             }
         });
     }
+    // menu options
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);

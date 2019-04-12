@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 
 /**
- fragment is implemented for viewpager swipe screen, this is the first fragment
+ fragment is implemented for viewpager swipe screen, this is the second fragment
 
  */
 public class SecondFragment extends Fragment {

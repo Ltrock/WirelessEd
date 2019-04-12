@@ -37,7 +37,7 @@ public class Module extends LocalizationActivity {
 
     private FirebaseAuth mAuth;
 
-
+    //Retrieve content from Firebase database path, and show into 2 columns of recycleview
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,14 +63,12 @@ public class Module extends LocalizationActivity {
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
         dataAdapter = new DataAdapter(response_data);
         mRecyclerView.setAdapter(dataAdapter);
-
         bindingData();
     }
 
-    //
-
     private void bindingData() {
         databaseReference.addChildEventListener(new ChildEventListener() {
+            //This method is triggered when a new child is added to the location to which this listener was added
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 response_data.add(dataSnapshot.getValue(DataModel.class));
@@ -99,6 +97,7 @@ public class Module extends LocalizationActivity {
             }
         });
     }
+    //get index of items
     private int getItemIndex(DataModel dataModel){
         int index = -1;
         for(int i =0; i < response_data.size(); i++){

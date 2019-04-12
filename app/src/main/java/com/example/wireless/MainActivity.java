@@ -24,20 +24,13 @@ import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 // Allow students to select between login and register
 public class MainActivity extends LocalizationActivity implements View.OnClickListener{
 
-
-
     private FirebaseAuth mAuth;
-
     private EditText password;
-
     private EditText email;
-
     private Button button_register;
-
     private Button button_login;
 
     @Override
-
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -58,13 +51,9 @@ public class MainActivity extends LocalizationActivity implements View.OnClickLi
             @Override
 
             public void onClick(View v) {
-
                 if (v == button_register){
-
                     RegisterUser();
-
                 }
-
             }
 
         });
@@ -74,84 +63,52 @@ public class MainActivity extends LocalizationActivity implements View.OnClickLi
             @Override
 
             public void onClick(View v) {
-
                 if (v == button_login){
-
                     startActivity(new Intent(getApplicationContext(),
-
                             LoginActivity.class));
 
                 }
-
             }
 
         });
-
     }
     // students can register by typing email and password
     public void RegisterUser(){
 
         String Email = email.getText().toString().trim();
-
         String Password = password.getText().toString().trim();
-
         if (TextUtils.isEmpty(Email)){
-
             Toast.makeText(this, "A Field is Empty", Toast.LENGTH_SHORT).show();
-
             return;
-
         }
-
         if (TextUtils.isEmpty(Password)){
-
             Toast.makeText(this, "A Field is Empty", Toast.LENGTH_SHORT).show();
-
             return;
-
         }
-
+        // when input correct email and password, go to firstpage, if not try again
         mAuth.createUserWithEmailAndPassword(Email, Password)
-
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
                     @Override
 
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
                         try {
-
                             if (task.isSuccessful()) {
-
-
                                 Toast.makeText(MainActivity.this, "successful",
-
                                         Toast.LENGTH_SHORT).show();
-
                                 finish();
-
                                 startActivity(new Intent(getApplicationContext(), Firstpage.class));
-
                             }else{
-
-                                Toast.makeText(MainActivity.this, "Try again, access the internet yet?",
-
-                                        Toast.LENGTH_SHORT).show();
-
+                                Toast.makeText(MainActivity.this, "Try again", Toast.LENGTH_SHORT).show();
                             }
-
                         }catch (Exception e){
-
                             e.printStackTrace();
-
                         }
-
                     }
 
                 });
-
     }
-
+    //Select between English and Thai language
     @Override
     public void onClick(View v) {
         int id = v.getId();

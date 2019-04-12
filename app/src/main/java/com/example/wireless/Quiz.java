@@ -89,6 +89,7 @@ public class Quiz extends LocalizationActivity {
                     bt1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            // When value of clicked button is as same as answer, it is correct, the background turns to green
                             if (bt1.getText().toString().equals(question.getAnswer())) {
                                 Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 bt1.setBackgroundColor(Color.GREEN);
@@ -102,7 +103,9 @@ public class Quiz extends LocalizationActivity {
                                         updateQ();
                                     }
                                 }, 1500);
-                            } else {
+                            }
+                            // The rest -> wrong then show as red and show correct answer as green
+                            else {
                                 Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 bt1.setBackgroundColor(Color.RED);
@@ -274,7 +277,7 @@ public class Quiz extends LocalizationActivity {
 
                 }
 
-                // when finish quiz, it shows score
+                // when finish quiz, it shows result
                 @Override
                 public void onFinish() {
                     t.setText("Completed");
@@ -285,6 +288,7 @@ public class Quiz extends LocalizationActivity {
                     startActivity(myIntent);
 
                 }
+                //start countdown
             }.start();
 
         }

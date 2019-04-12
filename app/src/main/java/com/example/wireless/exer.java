@@ -35,6 +35,7 @@ public class exer extends LocalizationActivity {
 
     private FirebaseAuth mAuth;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,7 @@ public class exer extends LocalizationActivity {
 
     }
 
+    // update question, when total questions reach the end, it will show result
     private void updateQ() {
         totalQ+=1;
         if(totalQ > 10){
@@ -71,6 +73,7 @@ public class exer extends LocalizationActivity {
             i.putExtra("Wrong:",String.valueOf(wrong));
             startActivity(i);
         }
+        // When questions not reach the last question, get value from Firebase
         else{
             databaseReference= FirebaseDatabase.getInstance().getReference().child("Questionsexer").child(String.valueOf(totalQ));
             databaseReference.addValueEventListener(new ValueEventListener() {
@@ -82,6 +85,8 @@ public class exer extends LocalizationActivity {
                     b2.setText(question.getOp2());
                     b3.setText(question.getOp3());
                     b4.setText(question.getOp4());
+                    // If button1 is the correct answer, set it to green and go to next question
+
                     b1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -89,7 +94,7 @@ public class exer extends LocalizationActivity {
                                 Toast.makeText(getApplicationContext(), getString(R.string.correct), Toast.LENGTH_SHORT).show();
                                 b1.setBackgroundColor(Color.GREEN);
                                 corr += 1;
-
+                                //run after the specified amount of time elapses.
                                 Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
                                     @Override
@@ -98,7 +103,9 @@ public class exer extends LocalizationActivity {
                                         updateQ();
                                     }
                                 }, 1500);
-                            } else {
+                            }
+                            // If botton one is wrong, shows as red and show correct answer as green
+                            else {
                                 Toast.makeText(getApplicationContext(), getString(R.string.wrong), Toast.LENGTH_SHORT).show();
                                 wrong += 1;
                                 b1.setBackgroundColor(Color.RED);
@@ -259,6 +266,7 @@ public class exer extends LocalizationActivity {
         }
 
     }
+    // menu options
     @Override
     public boolean onCreateOptionsMenu (Menu menu){
         getMenuInflater().inflate(R.menu.menu_main, menu);

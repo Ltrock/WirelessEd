@@ -26,49 +26,32 @@ import com.akexorcist.localizationactivity.ui.LocalizationActivity;
 public class LoginActivity extends LocalizationActivity {
 
     private EditText email;
-
     private EditText password;
-
     private FirebaseAuth mAuth;
-
     private FirebaseUser currentUser;
-
     private Button button;
 
-
     @Override
-
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_login);
-
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle(getString(R.string.LOGIN));
 
         email = (EditText)findViewById(R.id.login_email_input);
-
         password = (EditText)findViewById(R.id.login_password_input);
-
         mAuth = FirebaseAuth.getInstance();
-
         currentUser = mAuth.getCurrentUser();
-
         button = (Button)findViewById(R.id.login);
-
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
 
             public void onClick(View v) {
-
                 if (v == button){
-
                     LoginUser();
-
                 }
-
             }
 
         });
@@ -78,39 +61,27 @@ public class LoginActivity extends LocalizationActivity {
     public void LoginUser(){
 
         String Email = email.getText().toString().trim();
-
         String Password = password.getText().toString().trim();
-
         mAuth.signInWithEmailAndPassword(Email, Password)
-
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
                     @Override
 
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
                         if (task.isSuccessful()){
-
                             currentUser = mAuth.getCurrentUser();
-
                             finish();
-
                             startActivity(new Intent(getApplicationContext(),
-
                                     Firstpage.class));
-
-                        }else {
-
-                            Toast.makeText(LoginActivity.this, "couldn't login",
-
-                                    Toast.LENGTH_SHORT).show();
-
                         }
-
+                        //When fail to login, show text message (maybe because of wrong input email or pwd
+                        // or not connect to the internet yet
+                        else {
+                            Toast.makeText(LoginActivity.this, "couldn't login",
+                                    Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                 });
-
     }
-
 }
