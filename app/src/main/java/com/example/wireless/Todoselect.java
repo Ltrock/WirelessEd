@@ -83,6 +83,7 @@ public class Todoselect extends LocalizationActivity {
                     ViewGroup.LayoutParams.WRAP_CONTENT));
 
             String str = "";
+            //put 0 in front of file when digit <10
             if(cursor.getInt(1) < 10) {
                 str += "0";
             }
